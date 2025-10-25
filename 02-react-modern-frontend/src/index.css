@@ -1,24 +1,36 @@
 :root {
-  /* Apple SF Pro inspired font stack */
+  /* SF Pro inspired font stack */
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.47059;
   font-weight: 400;
 
-  /* Apple color palette */
-  --apple-blue: #007AFF;
-  --apple-blue-hover: #0051D5;
-  --apple-gray-1: #F5F5F7;
-  --apple-gray-2: #E8E8ED;
-  --apple-gray-3: #D2D2D7;
-  --apple-gray-4: #86868B;
-  --apple-text-primary: #1D1D1F;
-  --apple-text-secondary: #6E6E73;
-  --apple-white: #FFFFFF;
+  /* Custom color palette */
+  --color-green: #61E294;
+  --color-green-hover: #4FD081;
+  --color-beige: #DBBEA1;
+  --color-beige-light: #F0E5D8;
+  --color-gray: #595959;
+  --color-gray-light: #787878;
+  --color-pink: #F283B6;
+  --color-pink-hover: #EF6BA8;
+  --color-blue: #39A9DB;
+  --color-blue-hover: #2A95C7;
   
-  /* Apple shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  /* Semantic colors */
+  --color-primary: #39A9DB;
+  --color-primary-hover: #2A95C7;
+  --color-accent: #61E294;
+  --color-accent-hover: #4FD081;
+  --color-bg: #F9F9F9;
+  --color-bg-light: #FFFFFF;
+  --color-text-primary: #595959;
+  --color-text-secondary: #787878;
+  --color-border: #E0E0E0;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(89, 89, 89, 0.06);
+  --shadow-md: 0 4px 16px rgba(89, 89, 89, 0.1);
+  --shadow-lg: 0 8px 24px rgba(89, 89, 89, 0.14);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,8 +48,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--apple-gray-1);
-  color: var(--apple-text-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
 }
 
 #root {

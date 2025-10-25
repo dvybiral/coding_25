@@ -1,20 +1,21 @@
 .favorite-cities {
-  background: var(--apple-white);
+  background: var(--color-bg-light);
   border-radius: 18px;
   padding: 1.75rem;
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--apple-gray-2);
+  border: 2px solid var(--color-border);
   height: fit-content;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .favorite-cities:hover {
   box-shadow: var(--shadow-lg);
+  border-color: var(--color-pink);
 }
 
 .favorite-title {
   font-size: 1.375rem;
-  color: var(--apple-text-primary);
+  color: var(--color-text-primary);
   margin: 0 0 1.5rem 0;
   font-weight: 600;
   letter-spacing: -0.022em;
@@ -28,7 +29,7 @@
 .favorite-empty-text {
   font-size: 1.0625rem;
   margin: 0 0 0.5rem 0;
-  color: var(--apple-text-primary);
+  color: var(--color-text-primary);
   font-weight: 500;
   letter-spacing: -0.016em;
 }
@@ -36,7 +37,7 @@
 .favorite-empty-hint {
   font-size: 0.9375rem;
   margin: 0;
-  color: var(--apple-text-secondary);
+  color: var(--color-text-secondary);
   line-height: 1.47059;
 }
 

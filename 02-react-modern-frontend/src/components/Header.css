@@ -1,17 +1,15 @@
 .header {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
-  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-green) 100%);
+  padding: 1.25rem 2.5rem;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: var(--shadow-md);
 }
 
 .header-title {
   margin: 0;
-  color: var(--apple-text-primary);
+  color: white;
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.022em;
@@ -21,7 +19,7 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 0.875rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
   
   .header-title {
@@ -31,7 +29,7 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1rem;
   }
   
   .header-title {
