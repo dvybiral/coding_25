@@ -7,7 +7,58 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Your HTML content will go here -->
+    <header class="app-header" role="banner">
+        <h1 class="app-title">My Task Manager</h1>
+    </header>
+
+    <main class="app-main" role="main">
+        <section class="task-input" aria-labelledby="task-input-heading">
+            <h2 id="task-input-heading" class="visually-hidden">Add a new task</h2>
+            <form class="task-form" id="task-form" novalidate>
+                <div class="form-row">
+                    <label for="task-title" class="form-label">Task</label>
+                    <input type="text" id="task-title" name="title" class="input input-title" placeholder="Enter task name" autocomplete="off" required>
+                </div>
+                <div class="form-row">
+                    <label for="task-details" class="form-label">Details</label>
+                    <textarea id="task-details" name="details" class="input input-details" placeholder="Add more details (optional)" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="add-task-btn">Add Task</button>
+                </div>
+                <p id="form-error" class="form-error" role="alert" hidden>Please enter a task title.</p>
+            </form>
+        </section>
+
+        <section class="task-controls" aria-label="Task filters and stats">
+            <div class="filters" role="tablist" aria-label="Filters">
+                <button class="btn btn-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="btn btn-filter" data-filter="active" role="tab" aria-selected="false">Active</button>
+                <button class="btn btn-filter" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+            </div>
+            <div class="task-count" aria-live="polite">
+                <span id="active-count" class="active-count">0</span> tasks remaining
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="btn" type="button" aria-pressed="false" aria-label="Toggle light mode">Light mode</button>
+            </div>
+            <div class="bulk-actions">
+                <button id="clear-completed" class="btn" type="button" aria-label="Clear completed tasks">Clear Completed</button>
+            </div>
+        </section>
+
+        <section class="task-list-section" aria-labelledby="task-list-heading">
+            <h2 id="task-list-heading" class="visually-hidden">Tasks</h2>
+            <ul class="task-list" id="task-list">
+                <!-- Tasks will be rendered here -->
+            </ul>
+            <p class="empty-state" id="empty-state" hidden>No tasks yet! Add one above.</p>
+        </section>
+    </main>
+
+    <footer class="app-footer" role="contentinfo">
+        <p>Built by David Vybiral</p>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
