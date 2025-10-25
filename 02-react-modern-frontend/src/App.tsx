@@ -8,11 +8,13 @@ import ErrorMessage from './components/ErrorMessage';
 import FavoriteCities from './components/FavoriteCities';
 import useWeather from './hooks/useWeather';
 import useForecast from './hooks/useForecast';
+import useFavorites from './hooks/useFavorites';
 import './App.css';
 
 const App = () => {
   const { weatherData, loading, error, searchedCity, fetchWeather } = useWeather();
   const { forecastData, loading: forecastLoading, fetchForecast } = useForecast();
+  const { favorites, toggleFavorite, isFavorite } = useFavorites();
 
   const handleSearch = (city: string) => {
     fetchWeather(city);
@@ -22,6 +24,14 @@ const App = () => {
     if (searchedCity) {
       fetchWeather(searchedCity);
     }
+  };
+
+  const handleToggleFavorite = (city: string) => {
+    toggleFavorite(city);
+  };
+
+  const handleFavoriteClick = (city: string) => {
+    fetchWeather(city);
   };
 
   // Automatically fetch forecast when weather data is loaded
@@ -48,14 +58,21 @@ const App = () => {
             
             {!loading && !error && (
               <>
-                <WeatherCard weather={weatherData} />
+                <WeatherCard 
+                  weather={weatherData} 
+                  onToggleFavorite={handleToggleFavorite}
+                  isFavorite={weatherData ? isFavorite(weatherData.name) : false}
+                />
                 <Forecast forecast={forecastData} loading={forecastLoading} />
               </>
             )}
           </div>
           
           <div className="sidebar">
-            <FavoriteCities />
+            <FavoriteCities 
+              favorites={favorites}
+              onCityClick={handleFavoriteClick}
+            />
           </div>
         </div>
       </main>

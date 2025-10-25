@@ -41,6 +41,57 @@
   line-height: 1.47059;
 }
 
+/* Favorite List */
+.favorite-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  background: var(--color-bg-light);
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.favorite-item:hover {
+  border-color: var(--color-pink);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background: linear-gradient(135deg, rgba(242, 131, 182, 0.05) 0%, rgba(57, 169, 219, 0.05) 100%);
+}
+
+.favorite-item:active {
+  transform: translateY(0);
+}
+
+.favorite-city-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.016em;
+}
+
+.favorite-arrow {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  transition: transform 0.2s ease;
+}
+
+.favorite-item:hover .favorite-arrow {
+  transform: translateX(4px);
+  color: var(--color-pink);
+}
+
 @media (max-width: 968px) {
   .favorite-cities {
     margin-top: 0;

@@ -3,9 +3,11 @@ import './WeatherCard.css';
 
 interface WeatherCardProps {
   weather: WeatherData | null;
+  onToggleFavorite?: (city: string) => void;
+  isFavorite?: boolean;
 }
 
-const WeatherCard = ({ weather }: WeatherCardProps) => {
+const WeatherCard = ({ weather, onToggleFavorite, isFavorite = false }: WeatherCardProps) => {
   if (!weather) {
     return (
       <div className="weather-card weather-card-empty">
@@ -23,13 +25,31 @@ const WeatherCard = ({ weather }: WeatherCardProps) => {
   const weatherDescription = weatherInfo[0]?.description;
   const weatherMain = weatherInfo[0]?.main;
 
+  const handleFavoriteClick = () => {
+    if (onToggleFavorite) {
+      onToggleFavorite(name);
+    }
+  };
+
   return (
     <div className="weather-card">
       <div className="weather-card-header">
-        <h2 className="weather-location">
-          {name}, {sys.country}
-        </h2>
-        <p className="weather-description">{weatherDescription}</p>
+        <div className="weather-header-content">
+          <h2 className="weather-location">
+            {name}, {sys.country}
+          </h2>
+          <p className="weather-description">{weatherDescription}</p>
+        </div>
+        {onToggleFavorite && (
+          <button
+            onClick={handleFavoriteClick}
+            className="weather-favorite-button"
+            aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+            title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+          >
+            {isFavorite ? '❤️' : '🤍'}
+          </button>
+        )}
       </div>
 
       <div className="weather-main">
