@@ -1,5 +1,6 @@
 .forecast-container {
   margin-top: 2rem;
+  overflow: visible;
 }
 
 .forecast-title {
@@ -15,7 +16,8 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   overflow-x: auto;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0.25rem 1rem 0.25rem;
+  overflow-y: visible;
 }
 
 .forecast-card {
@@ -54,6 +56,7 @@
   box-shadow: var(--shadow-lg), 0 0 20px rgba(57, 169, 219, 0.15);
   border-color: var(--color-blue);
   background: linear-gradient(135deg, rgba(97, 226, 148, 0.05) 0%, rgba(57, 169, 219, 0.05) 100%);
+  z-index: 10;
 }
 
 .forecast-day {

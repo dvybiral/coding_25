@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Search } from 'lucide-react';
 import './SearchBar.css';
 
 interface SearchBarProps {
@@ -24,7 +25,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
     <div className="search-bar">
       <form onSubmit={handleSubmit} className="search-form">
         <div className="search-input-wrapper">
-          <span className="search-icon" aria-hidden="true">🔍</span>
+          <Search className="search-icon" aria-hidden="true" size={20} strokeWidth={2} />
           <input
             type="text"
             value={searchTerm}
@@ -35,7 +36,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
           />
         </div>
         <button type="submit" className="search-button" disabled={!searchTerm.trim()}>
-          <span className="button-icon">🔍</span>
+          <Search className="button-icon" size={20} strokeWidth={2} />
           <span className="button-text">Search</span>
         </button>
       </form>

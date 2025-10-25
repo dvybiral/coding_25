@@ -1,4 +1,5 @@
 import { WeatherData } from '../hooks/useWeather';
+import { Thermometer, Droplet, Wind, Heart } from 'lucide-react';
 import './WeatherCard.css';
 
 interface WeatherCardProps {
@@ -47,7 +48,12 @@ const WeatherCard = ({ weather, onToggleFavorite, isFavorite = false }: WeatherC
             aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           >
-            {isFavorite ? '❤️' : '🤍'}
+            <Heart 
+              size={24} 
+              strokeWidth={2}
+              fill={isFavorite ? 'currentColor' : 'none'}
+              className={isFavorite ? 'heart-filled' : 'heart-outline'}
+            />
           </button>
         )}
       </div>
@@ -68,7 +74,7 @@ const WeatherCard = ({ weather, onToggleFavorite, isFavorite = false }: WeatherC
 
       <div className="weather-details">
         <div className="weather-detail-item">
-          <span className="weather-detail-icon">🌡️</span>
+          <Thermometer className="weather-detail-icon icon-thermometer" size={24} strokeWidth={2} />
           <div className="weather-detail-content">
             <span className="weather-detail-label">Feels like</span>
             <span className="weather-detail-value">{Math.round(main.feels_like)}°</span>
@@ -76,7 +82,7 @@ const WeatherCard = ({ weather, onToggleFavorite, isFavorite = false }: WeatherC
         </div>
 
         <div className="weather-detail-item">
-          <span className="weather-detail-icon">💧</span>
+          <Droplet className="weather-detail-icon icon-droplet" size={24} strokeWidth={2} />
           <div className="weather-detail-content">
             <span className="weather-detail-label">Humidity</span>
             <span className="weather-detail-value">{main.humidity}%</span>
@@ -84,7 +90,7 @@ const WeatherCard = ({ weather, onToggleFavorite, isFavorite = false }: WeatherC
         </div>
 
         <div className="weather-detail-item">
-          <span className="weather-detail-icon">💨</span>
+          <Wind className="weather-detail-icon icon-wind" size={24} strokeWidth={2} />
           <div className="weather-detail-content">
             <span className="weather-detail-label">Wind Speed</span>
             <span className="weather-detail-value">{wind.speed} m/s</span>

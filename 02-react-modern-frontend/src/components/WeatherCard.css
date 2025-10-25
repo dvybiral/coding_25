@@ -148,11 +148,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
   animation: fadeInScale 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s backwards;
+  color: white;
 }
 
 @keyframes fadeInScale {
@@ -163,6 +163,30 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+.weather-favorite-button .heart-filled {
+  color: var(--color-pink);
+  animation: heartBeat 0.3s ease-in-out;
+}
+
+.weather-favorite-button .heart-outline {
+  color: white;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(1.1);
   }
 }
 
@@ -270,8 +294,50 @@
 }
 
 .weather-detail-icon {
-  font-size: 1.75rem;
-  line-height: 1;
+  flex-shrink: 0;
+  color: white;
+}
+
+/* Animated weather icons */
+.icon-thermometer {
+  animation: gentleRotate 20s linear infinite;
+}
+
+@keyframes gentleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-droplet {
+  animation: drip 2s ease-in-out infinite;
+}
+
+@keyframes drip {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.icon-wind {
+  animation: windPulse 3s ease-in-out infinite;
+}
+
+@keyframes windPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
 }
 
 .weather-detail-content {

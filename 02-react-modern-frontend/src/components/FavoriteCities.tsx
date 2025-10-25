@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react';
 import './FavoriteCities.css';
 
 interface FavoriteCitiesProps {
@@ -24,7 +25,7 @@ const FavoriteCities = ({ favorites, onCityClick }: FavoriteCitiesProps) => {
           {favorites.map((city) => (
             <li key={city} className="favorite-item" onClick={() => handleCityClick(city)}>
               <span className="favorite-city-name">{city}</span>
-              <span className="favorite-arrow">→</span>
+              <ChevronRight className="favorite-arrow" size={20} strokeWidth={2} />
             </li>
           ))}
         </ul>
