@@ -10,6 +10,29 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  animation: fadeIn 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(57, 169, 219, 0.05), transparent);
+  animation: shimmerRotate 3s linear infinite;
+}
+
+@keyframes shimmerRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-spinner {
